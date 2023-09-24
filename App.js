@@ -17,8 +17,8 @@ function ExpenceOverview() {
   return (
     <BottomTabs.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: GlobalStyles.colors.primary400 },
-        tabBarStyle: { backgroundColor: GlobalStyles.colors.primary400 },
+        headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+        tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
         tabBarActiveTintColor: GlobalStyles.colors.accent500,
         headerTintColor: 'white',
       }}
