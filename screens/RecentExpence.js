@@ -1,10 +1,9 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import ExpenceOutput from '../components/ExpenceOutput/ExpenceOutput'
 
 export default function RecentExpence() {
   return (
-    <View>
-      <Text>RecentExpence</Text>
-    </View>
+    <ExpenceOutput expencePeriod={'Last 7 Days'} />
   )
 }
