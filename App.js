@@ -65,13 +65,16 @@ export default function App() {
     <React.Fragment>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+          headerStyle: {backgroundColor: GlobalStyles.colors.primary500},
+          headerTintColor: 'white',
+        }}>
           <Stack.Screen
             name="ExpenceOverview"
             component={ExpenceOverview}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="ManageExpence" component={ManageExpence} />
+          <Stack.Screen name="ManageExpence" component={ManageExpence} options={{presentation: 'modal'}}/>
         </Stack.Navigator>
       </NavigationContainer>
     </React.Fragment>
