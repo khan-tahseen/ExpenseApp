@@ -1,10 +1,12 @@
 import { View, StyleSheet } from 'react-native';
-import React, { useLayoutEffect } from 'react';
+import React, { useContext, useLayoutEffect } from 'react';
 import IconButton from '../UI/IconButton';
 import { GlobalStyles } from '../constants/styles';
 import Button from '../UI/Button';
+import { ExpencesContext } from '../store/expences-context';
 
 export default function ManageExpence({ route, navigation }) {
+  const expencesCtx = useContext(ExpencesContext)
   const editedExpenceId = route.params?.expenceId;
   const isEditing = !!editedExpenceId;
 
@@ -19,10 +21,24 @@ export default function ManageExpence({ route, navigation }) {
   }
 
   function confirmHandler() {
+    if (isEditing) {
+      expencesCtx.updateExpence(editedExpenceId, {
+        description: 'Update Expence Item!',
+        amount: 12.88,
+        date: new Date('2023-9-23')
+      })
+    } else {
+      expencesCtx.addExpence({
+        description: 'Add New Expence item',
+        amount: 22,
+        date: new Date('2023-9-25')
+      });
+    }
     navigation.goBack();
   }
 
   function deleteExpenceHandler() {
+    expencesCtx.deleteExpence(editedExpenceId);
     navigation.goBack();
   }
 

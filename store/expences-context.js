@@ -49,7 +49,7 @@ function expencesReducer(state, action) {
       updatedExpence[updateableExpenceIndex] = updatedItem;
       return updatedExpence;
     case 'DELETE':
-      return state.filter((expence) => expence.id !== action.payload.id);
+      return state.filter((expence) => expence.id !== action.payload);
     default:
       return state;
   }
