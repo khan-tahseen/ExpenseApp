@@ -5,6 +5,8 @@ import Input from './Input';
 export default function ExpenceForm() {
   function amountChangeHandler() {}
 
+  function dateChangeHandler() {}
+
   return (
     <View>
       <View style={styles.inputRow}>
@@ -22,7 +24,7 @@ export default function ExpenceForm() {
           textInputConfig={{
             placeholder: 'YYYY-MM-DD',
             maxLength: 10,
-            onChangeText: () => {},
+            onChangeText: dateChangeHandler,
           }}
         />
       </View>
