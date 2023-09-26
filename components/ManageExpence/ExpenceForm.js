@@ -9,6 +9,7 @@ export default function ExpenceForm() {
     <View>
       <View style={styles.inputRow}>
         <Input
+          style={{ flex: 1 }}
           label={'Amount'}
           textInputConfig={{
             keyboardType: 'decimal-pad',
@@ -16,6 +17,7 @@ export default function ExpenceForm() {
           }}
         />
         <Input
+          style={{ flex: 1 }}
           label={'Date'}
           textInputConfig={{
             placeholder: 'YYYY-MM-DD',
