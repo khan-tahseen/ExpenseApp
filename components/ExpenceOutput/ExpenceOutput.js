@@ -3,14 +3,12 @@ import React from 'react';
 import ExpenceList from './ExpenceList';
 import ExpenceSummary from './ExpenceSummary';
 import { GlobalStyles } from '../../constants/styles';
-import { DUMMY_EXPENCE } from '../../store/expences-context';
-
 
 export default function ExpenceOutput({ expences, expencePeriod }) {
   return (
     <View style={styles.container}>
-      <ExpenceSummary expences={DUMMY_EXPENCE} periodName={expencePeriod} />
-      <ExpenceList expences={DUMMY_EXPENCE} />
+      <ExpenceSummary expences={expences} periodName={expencePeriod} />
+      <ExpenceList expences={expences} />
     </View>
   );
 }

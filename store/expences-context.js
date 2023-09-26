@@ -19,10 +19,16 @@ export const DUMMY_EXPENCE = [
     amount: 15.66,
     date: new Date('2022-9-12'),
   },
+  {
+    id: 'e4',
+    description: 'A Laptop',
+    amount: 480.66,
+    date: new Date('2023-9-24'),
+  },
 ];
 
 export const ExpencesContext = createContext({
-  Expences: [],
+  expences: [],
   addExpence: ({ description, amount, date }) => {},
   deleteExpence: (id) => {},
   updateExpence: (id, { description, amount, date }) => {},
