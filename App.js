@@ -64,7 +64,7 @@ function ExpenceOverview() {
 export default function App() {
   return (
     <React.Fragment>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <ExpencesContextProvider>
         <NavigationContainer>
           <Stack.Navigator

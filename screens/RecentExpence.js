@@ -9,10 +9,14 @@ export default function RecentExpence() {
   const recentExpences = expencesCtx.expences.filter((expence) => {
     const today = new Date();
     const date7DaysAgo = getDateMinusDays(today, 7);
-    return (expence.date >= date7DaysAgo) && (expence.date <= today);
+    return expence.date >= date7DaysAgo && expence.date <= today;
   });
 
   return (
-    <ExpenceOutput expences={recentExpences} expencePeriod={'Last 7 Days'} />
+    <ExpenceOutput
+      expences={recentExpences}
+      expencePeriod={'Last 7 Days'}
+      fallbackText={'No Expences Registered for the last 7 days'}
+    />
   );
 }

@@ -5,6 +5,10 @@ import { ExpencesContext } from '../store/expences-context';
 export default function AllExpences() {
   const expencesCtx = useContext(ExpencesContext);
   return (
-    <ExpenceOutput expences={expencesCtx.expences} expencePeriod={'Total'} />
+    <ExpenceOutput
+      expences={expencesCtx.expences}
+      expencePeriod={'Total'}
+      fallbackText={'No registered expences found!'}
+    />
   );
 }
