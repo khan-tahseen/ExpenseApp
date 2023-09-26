@@ -10,6 +10,7 @@ import RecentExpence from './screens/RecentExpence';
 import AllExpences from './screens/AllExpences';
 import { GlobalStyles } from './constants/styles';
 import IconButton from './UI/IconButton';
+import ExpencesContextProvider from './store/expences-context';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -64,19 +65,27 @@ export default function App() {
   return (
     <React.Fragment>
       <StatusBar style="auto" />
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{
-          headerStyle: {backgroundColor: GlobalStyles.colors.primary500},
-          headerTintColor: 'white',
-        }}>
-          <Stack.Screen
-            name="ExpenceOverview"
-            component={ExpenceOverview}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="ManageExpence" component={ManageExpence} options={{presentation: 'modal'}}/>
-        </Stack.Navigator>
-      </NavigationContainer>
+      <ExpencesContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+              headerTintColor: 'white',
+            }}
+          >
+            <Stack.Screen
+              name="ExpenceOverview"
+              component={ExpenceOverview}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ManageExpence"
+              component={ManageExpence}
+              options={{ presentation: 'modal' }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ExpencesContextProvider>
     </React.Fragment>
   );
 }

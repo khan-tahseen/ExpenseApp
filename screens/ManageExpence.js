@@ -14,11 +14,17 @@ export default function ManageExpence({ route, navigation }) {
     });
   }, [navigation, isEditing]);
 
-  function cancleHandler() {}
+  function cancleHandler() {
+    navigation.goBack();
+  }
 
-  function confirmHandler() {}
+  function confirmHandler() {
+    navigation.goBack();
+  }
 
-  function deleteExpenceHandler() {}
+  function deleteExpenceHandler() {
+    navigation.goBack();
+  }
 
   return (
     <View style={styles.container}>
