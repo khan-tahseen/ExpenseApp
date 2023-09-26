@@ -4,6 +4,7 @@ import IconButton from '../UI/IconButton';
 import { GlobalStyles } from '../constants/styles';
 import Button from '../UI/Button';
 import { ExpencesContext } from '../store/expences-context';
+import ExpenceForm from '../components/ManageExpence/ExpenceForm';
 
 export default function ManageExpence({ route, navigation }) {
   const expencesCtx = useContext(ExpencesContext)
@@ -44,6 +45,7 @@ export default function ManageExpence({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+      <ExpenceForm />
       <View style={styles.buttons}>
         <Button style={styles.button} mode="flat" onPress={cancleHandler}>
           Cancle
@@ -76,6 +78,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 16
   },
   button: {
     minWidth: 120,
